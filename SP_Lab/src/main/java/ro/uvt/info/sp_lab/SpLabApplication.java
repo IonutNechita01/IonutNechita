@@ -11,18 +11,18 @@ public class SpLabApplication {
         Book discoTitanic = new Book("Disco Titanic");
         Author author = new Author("Radu Pavel Gheo");
         discoTitanic.addAuthor(author);
-        int indexChapterOne = discoTitanic.createChapter("Capitolul 1");
-        Chapter chp1 = discoTitanic.getChapter(indexChapterOne);
-        int indexSubChapterOneOne = chp1.createSubChapter("Subcapitolul 1.1");
-        SubChapter scOneOne = chp1.getSubChapter(indexSubChapterOneOne);
-        scOneOne.createNewParagraph("Paragraph 1");
-        scOneOne.createNewParagraph("Paragraph 2");
-        scOneOne.createNewParagraph("Paragraph 3");
-        scOneOne.createNewImage("Image 1");
-        scOneOne.createNewParagraph("Paragraph 4");
-        scOneOne.createNewTable("Table 1");
-        scOneOne.createNewParagraph("Paragraph 5");
-        scOneOne.print();
+        Section sec1 = new Section("Capitolul 1");
+        Section sec11 = new Section("Capitolul 1.1");
+        Section sec111 = new Section("Capitolul 1.1.1");
+        sec1.add(new Paragraph("Paragraph 1"));
+        sec1.add(sec11);
+        sec11.add(sec111);
+        sec1.add(new Image("Image 1"));
+        sec11.add(new Paragraph("Paragraph 2"));
+        sec11.add(new Table("Table 1"));
+        sec111.add(new Paragraph("Paragraph 3"));
+        discoTitanic.createSection(sec1);
+        discoTitanic.print();
     }
 
 }

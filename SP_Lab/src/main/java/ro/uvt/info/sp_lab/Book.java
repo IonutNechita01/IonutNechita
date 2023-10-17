@@ -6,9 +6,8 @@ import java.util.List;
 public class Book {
     
     private String title;
-    private TableOfContents tableOfContents;
     private List<Author> authors = new ArrayList<>();
-    private List<Chapter> chapters = new ArrayList<>();
+    private List<Section> sections = new ArrayList<>();
 
     public Book(String title) {
         this.title = title;
@@ -18,25 +17,23 @@ public class Book {
         authors.add(author);
     }
 
-    public int createChapter(String chapterName) {
-        Chapter chapter = new Chapter(chapterName);
-        chapters.add(chapter);
-        return chapters.indexOf(chapter);
+    public int createSection(Section section) {
+        sections.add(section);
+        return sections.indexOf(section);
     }
 
-    public Chapter getChapter(int index) {
-        return chapters.get(index);
-    }
-
-    public void setTableOfContents(TableOfContents tableOfContents) {
-        this.tableOfContents = tableOfContents;
-    }
-
-    public TableOfContents getTableOfContents() {
-        return tableOfContents;
+    public Section getSection(int index) {
+        return sections.get(index);
     }
 
     public void print() {
         System.out.println("Book: " + title);
+        System.out.print("Authors: ");
+        for (Author author : authors) {
+            author.print();
+        }
+        for (Section section : sections) {
+            section.print();
+        }
     }
 }

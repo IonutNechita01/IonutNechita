@@ -1,6 +1,6 @@
 package ro.uvt.info.sp_lab;
 
-public class Table {
+public class Table implements Element{
     
     private String title;
 

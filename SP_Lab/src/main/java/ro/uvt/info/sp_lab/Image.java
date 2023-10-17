@@ -1,6 +1,6 @@
 package ro.uvt.info.sp_lab;
 
-public class Image {
+public class Image implements Element {
     
     private String imageName;
 
