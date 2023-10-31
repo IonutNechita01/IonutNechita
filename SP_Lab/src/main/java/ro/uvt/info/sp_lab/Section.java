@@ -13,15 +13,17 @@ public class Section implements Element {
         this.name = name;
     }
 
-    public int add(Element elm) {
+    @Override
+    public void add(Element elm) {
         content.add(elm);
-        return content.indexOf(elm);
     }
 
+    @Override
     public void remove(Element elm) {
         content.remove(elm);
     }
 
+    @Override
     public Element getElement(int index) {
         return content.get(index);
     }

@@ -3,13 +3,14 @@ package ro.uvt.info.sp_lab;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Book {
+public class Book extends Section{
     
     private String title;
     private List<Author> authors = new ArrayList<>();
     private List<Section> sections = new ArrayList<>();
 
     public Book(String title) {
+        super(title);
         this.title = title;
     }
 
