@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-SpLabApplication<SP_Lab>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "ro.uvt.info.sp_lab.SpLabApplication",
+            "projectName": "SP_Lab",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

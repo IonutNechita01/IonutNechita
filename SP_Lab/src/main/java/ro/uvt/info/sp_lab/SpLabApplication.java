@@ -7,35 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpLabApplication {
 
     public static void main(String[] args) {
-        long startTime = System.currentTimeMillis();
-        ImageProxy img1 = new ImageProxy("Pamela Anderson");
-        ImageProxy img2 = new ImageProxy("Kim Kardashian");
-        ImageProxy img3 = new ImageProxy("Kirby Griffin");
-        Section playboyS1 = new Section("Front Cover");
-        playboyS1.add(img1);
-        Section playboyS2 = new Section("Summer Girls");
-        playboyS2.add(img2);
-        playboyS2.add(img3);
-        Book playboy = new Book("Playboy");
-        playboy.createSection(playboyS1);
-        playboy.createSection(playboyS2);
-        long endTime = System.currentTimeMillis();
-        System.out.println("Creation of the content took " + (endTime -
-        startTime) + " milliseconds");
-        startTime = System.currentTimeMillis();
-        playboyS1.print();
-        endTime = System.currentTimeMillis();
-        System.out.println("Printing of the section 1 took " + (endTime -
-        startTime) + " milliseconds");
-        startTime = System.currentTimeMillis();
-        playboyS1.print();
-        endTime = System.currentTimeMillis();
-        System.out.println("Printing again the section 1 took " + (endTime -
-        startTime) + " milliseconds");
-        startTime = System.currentTimeMillis();
-        Image img10 = new Image("Pamela Anderson");
-        img10.print();
-        img10.print();
+        Paragraph p1 = new Paragraph("In the heart of the bustling city, the streets thrummed with life. People hurried along the sidewalks, their footsteps creating a symphony of movement. Tall skyscrapers reached for the sky, their glass facades reflecting the golden rays of the setting sun. The aroma of street food wafted through the air, tempting passersby with its tantalizing scent Amidst the urban chaos, a sense of unity prevailed. Diverse individuals from various backgrounds and walks of life came together in this vibrant metropolis. They shared the same crowded subways, visited the same local coffee shops, and celebrated the city's festivals with a collective spirit that transcended their differences. On the outskirts of the city, nature's beauty unfolded. Rolling hills stretched as far as the eye could see, and wildflowers danced in the breeze. The countryside offered a serene escape from the urban hustle and bustle, providing solace to those seeking a moment of respite. Whether in the heart of the city or on the outskirts, the world continued to turn, and life carried on with its unending rhythm. Each day brought new challenges and opportunities, woven into the tapestry of existence.");
+        p1.setAlignStrategy(new AlignLeft(), new Context(10, 2, 100));
+        p1.setAlignStrategy(new AlignRight(), new Context(40, 2, 50));
     }
 
 }
