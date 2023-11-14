@@ -1,4 +1,7 @@
-package ro.uvt.info.sp_lab;
+package ro.uvt.info.sp_lab.models;
+
+import ro.uvt.info.sp_lab.models.Picture;
+import ro.uvt.info.sp_lab.models.Element;
 
 import java.awt.Dimension;
 import java.util.concurrent.TimeUnit;

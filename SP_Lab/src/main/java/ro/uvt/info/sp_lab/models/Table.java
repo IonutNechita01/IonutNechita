@@ -1,6 +1,8 @@
-package ro.uvt.info.sp_lab;
+package ro.uvt.info.sp_lab.models;
 
-public class Table implements Element{
+import ro.uvt.info.sp_lab.models.Element;
+
+public class Table implements Element {
     
     private String title;
 

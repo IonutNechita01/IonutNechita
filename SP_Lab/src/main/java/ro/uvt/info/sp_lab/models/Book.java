@@ -1,9 +1,9 @@
-package ro.uvt.info.sp_lab;
+package ro.uvt.info.sp_lab.models;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Book extends Section{
+public class Book extends Section {
     
     private String title;
     private List<Author> authors = new ArrayList<>();

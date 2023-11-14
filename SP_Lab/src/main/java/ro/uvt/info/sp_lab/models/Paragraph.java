@@ -1,6 +1,10 @@
-package ro.uvt.info.sp_lab;
+package ro.uvt.info.sp_lab.models;
 
-public class Paragraph implements Element{
+import ro.uvt.info.sp_lab.services.AlignStrategy;
+import ro.uvt.info.sp_lab.models.Context;
+import ro.uvt.info.sp_lab.models.Element;
+
+public class Paragraph implements Element {
     
     private final String text;
 

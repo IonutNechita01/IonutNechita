@@ -1,4 +1,4 @@
-package ro.uvt.info.sp_lab;
+package ro.uvt.info.sp_lab.models;
 
 public class Author {
     

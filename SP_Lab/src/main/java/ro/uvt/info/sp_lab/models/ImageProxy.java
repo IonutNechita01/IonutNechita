@@ -1,8 +1,12 @@
-package ro.uvt.info.sp_lab;
+package ro.uvt.info.sp_lab.models;
+
+import ro.uvt.info.sp_lab.models.Picture;
+import ro.uvt.info.sp_lab.models.Element;
+import ro.uvt.info.sp_lab.models.Image;
 
 import java.awt.Dimension;
 
-public class ImageProxy implements Element, Picture{
+public class ImageProxy implements Element, Picture {
     private String url;
     private Dimension dim;
     private Image realImage;

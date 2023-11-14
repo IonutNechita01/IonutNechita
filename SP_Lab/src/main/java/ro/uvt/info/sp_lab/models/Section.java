@@ -1,4 +1,6 @@
-package ro.uvt.info.sp_lab;
+package ro.uvt.info.sp_lab.models;
+
+import ro.uvt.info.sp_lab.models.Element;
 
 import java.util.ArrayList;
 import java.util.List;
