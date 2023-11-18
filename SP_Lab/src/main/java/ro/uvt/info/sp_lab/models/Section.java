@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Section implements Element {
+public class Section implements Element, Visitee {
     
     private String name;
     private List<Element> content = new ArrayList<>();
@@ -30,10 +30,16 @@ public class Section implements Element {
         return content.get(index);
     }
 
-    public void print() {
-        System.out.println("Section: " + name);
-        for (Element element : content) {
-            element.print();
-        }
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitSection(this);
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public List<Element> getContent() {
+        return this.content;
     }
 }

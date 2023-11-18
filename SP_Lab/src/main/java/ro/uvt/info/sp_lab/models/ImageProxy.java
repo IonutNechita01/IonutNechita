@@ -6,7 +6,7 @@ import ro.uvt.info.sp_lab.models.Image;
 
 import java.awt.Dimension;
 
-public class ImageProxy implements Element, Picture {
+public class ImageProxy implements Element, Picture, Visitee{
     private String url;
     private Dimension dim;
     private Image realImage;
@@ -16,16 +16,11 @@ public class ImageProxy implements Element, Picture {
         this.realImage = null;
     }
 
-    private Image loadImage() {
+    public Image loadImage() {
         if (realImage == null) {
             realImage = new Image(url);
         }
         return realImage;
-    }
-
-    @Override
-    public void print() {
-        loadImage().print();
     }
 
     @Override
@@ -36,5 +31,9 @@ public class ImageProxy implements Element, Picture {
     @Override
     public Dimension dim() {
         return dim;
+    }
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitImageProxy(this);
     }
 }

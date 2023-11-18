@@ -3,7 +3,7 @@ package ro.uvt.info.sp_lab.models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Book extends Section {
+public class Book extends Section implements Element, Visitee {
     
     private String title;
     private List<Author> authors = new ArrayList<>();
@@ -27,14 +27,21 @@ public class Book extends Section {
         return sections.get(index);
     }
 
-    public void print() {
-        System.out.println("Book: " + title);
-        System.out.print("Authors: ");
-        for (Author author : authors) {
-            author.print();
-        }
-        for (Section section : sections) {
-            section.print();
-        }
+    public String getTitle() {
+        return this.title;
     }
+
+    public List<Author> getAuthors() {
+        return this.authors;
+    }
+
+    public List<Section> getSections() {
+        return this.sections;
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitBook(this);
+    }
+
 }

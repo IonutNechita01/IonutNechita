@@ -6,7 +6,7 @@ import ro.uvt.info.sp_lab.models.Element;
 import java.awt.Dimension;
 import java.util.concurrent.TimeUnit;
 
-public class Image implements Element, Picture {
+public class Image implements Element, Picture, Visitee {
 
     private String imageName;
 
@@ -19,10 +19,6 @@ public class Image implements Element, Picture {
         }
     }
 
-    public void print() {
-        System.out.println("Image with name: " + imageName);
-    }
-
     @Override
     public String url() {
         return imageName;
@@ -31,5 +27,13 @@ public class Image implements Element, Picture {
     @Override
     public Dimension dim() {
         return new Dimension(100, 100);
+    }
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitImage(this);
+    }
+
+    public String getImageName() {
+        return this.imageName;
     }
 }
