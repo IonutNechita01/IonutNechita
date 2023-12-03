@@ -1,5 +1,7 @@
 package ro.uvt.info.sp_lab.models;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +11,7 @@ public class Book extends Section implements Element, Visitee {
     private List<Author> authors = new ArrayList<>();
     private List<Section> sections = new ArrayList<>();
 
+    @JsonCreator
     public Book(String title) {
         super(title);
         this.title = title;
