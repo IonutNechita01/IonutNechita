@@ -1,15 +1,17 @@
 package ro.uvt.info.sp_lab.models;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
 public class Book extends Section implements Element, Visitee {
     
-    private String title;
-    private List<Author> authors = new ArrayList<>();
-    private List<Section> sections = new ArrayList<>();
+    private final String title;
+    private final List<Author> authors = new ArrayList<>();
+    private final List<Section> sections = new ArrayList<>();
 
     @JsonCreator
     public Book(String title) {
@@ -28,18 +30,6 @@ public class Book extends Section implements Element, Visitee {
 
     public Section getSection(int index) {
         return sections.get(index);
-    }
-
-    public String getTitle() {
-        return this.title;
-    }
-
-    public List<Author> getAuthors() {
-        return this.authors;
-    }
-
-    public List<Section> getSections() {
-        return this.sections;
     }
 
     @Override

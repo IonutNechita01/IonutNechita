@@ -1,14 +1,16 @@
 package ro.uvt.info.sp_lab.models;
 
+import lombok.Getter;
 import ro.uvt.info.sp_lab.models.Picture;
 import ro.uvt.info.sp_lab.models.Element;
 
 import java.awt.Dimension;
 import java.util.concurrent.TimeUnit;
 
+@Getter
 public class Image implements Element, Picture, Visitee {
 
-    private String imageName;
+    private final String imageName;
 
     public Image(String name) {
         imageName = name;
@@ -33,7 +35,4 @@ public class Image implements Element, Picture, Visitee {
         visitor.visitImage(this);
     }
 
-    public String getImageName() {
-        return this.imageName;
-    }
 }
