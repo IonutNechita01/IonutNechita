@@ -1,15 +1,22 @@
 package ro.uvt.info.sp_lab.models;
 
-import ro.uvt.info.sp_lab.models.Element;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class Section implements Element, Visitee {
-    
+@Entity
+@NoArgsConstructor(force = true)
+@Getter
+public class Section extends BaseElement implements Visitee {
+
     private String name;
-    private List<Element> content = new ArrayList<>();
+
+    @OneToMany(targetEntity = BaseElement.class)
+    private final List<Element> content = new ArrayList<>();
 
     public Section(String name) {
         this.name = name;
@@ -35,11 +42,4 @@ public class Section implements Element, Visitee {
         visitor.visitSection(this);
     }
 
-    public String getName() {
-        return this.name;
-    }
-
-    public List<Element> getContent() {
-        return this.content;
-    }
 }

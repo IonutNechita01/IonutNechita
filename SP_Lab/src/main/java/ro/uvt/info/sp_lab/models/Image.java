@@ -1,6 +1,8 @@
 package ro.uvt.info.sp_lab.models;
 
+import jakarta.persistence.Entity;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import ro.uvt.info.sp_lab.models.Picture;
 import ro.uvt.info.sp_lab.models.Element;
 
@@ -8,7 +10,8 @@ import java.awt.Dimension;
 import java.util.concurrent.TimeUnit;
 
 @Getter
-public class Image implements Element, Picture, Visitee {
+@NoArgsConstructor(force = true)
+public class Image implements Picture, Element {
 
     private final String imageName;
 

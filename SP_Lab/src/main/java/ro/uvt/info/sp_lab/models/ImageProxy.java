@@ -1,14 +1,20 @@
 package ro.uvt.info.sp_lab.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Transient;
+import lombok.NoArgsConstructor;
 import ro.uvt.info.sp_lab.models.Picture;
 import ro.uvt.info.sp_lab.models.Element;
 import ro.uvt.info.sp_lab.models.Image;
 
 import java.awt.Dimension;
 
-public class ImageProxy implements Element, Picture, Visitee{
+@Entity
+@NoArgsConstructor(force = true)
+public class ImageProxy extends BaseElement implements Picture, Visitee{
     private String url;
     private Dimension dim;
+    @Transient
     private Image realImage;
 
     public ImageProxy(String url) {

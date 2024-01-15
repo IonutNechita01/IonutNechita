@@ -1,7 +1,8 @@
 package ro.uvt.info.sp_lab.models;
 
+import jakarta.persistence.MappedSuperclass;
+
 interface Element extends Visitee{
-    
     default Element getElement(int index){
         return this;
     };
